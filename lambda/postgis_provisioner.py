@@ -14,12 +14,13 @@ except Exception as e:
     init_failed = e
 
 def create(event,context):
+    print (event)
     try:
         conn = psycopg2.connect(
-                dbname=event["DbName"],
-                user=event["Username"],
-                password=event["Password"],
-                host=event["Host"],
+                dbname=event["ResourceProperties"]["DbName"],
+                user=event["ResourceProperties"]["Username"],
+                password=event["ResourceProperties"]["Password"],
+                host=event["ResourceProperties"]["Host"],
                 )
     except:
         raise ConnectionError("Failed with error: ", sys.exc_info()[0])
