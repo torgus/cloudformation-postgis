@@ -58,13 +58,19 @@ s;
             conn.close()
 
     print("Successfully installed postgis extension")
-
+    physical_resource_id = 'Postgisprovisioner'
+    response_data = {}
+    return physical_resource_id, response_data
 
 def update(event, context):
-    return
+    physical_resource_id = 'Postgisprovisioner'
+    response_data = {}
+    return physical_resource_id, response_data
 
 def delete(event, context):
-    return
+    physical_resource_id = 'Postgisprovisioner'
+    response_data = {}
+    return physical_resource_id, response_data
 
 def lambda_handler(event, context):
     global logger
